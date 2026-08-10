@@ -1,160 +1,871 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mithilesh Ma'am</title>
+
+<title>Kusumlata Ma'am ❤️</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Poppins, sans-serif;
 }
 
 body{
-    height:100vh;
+
+    min-height:100vh;
+
+    font-family:
+    "Noto Sans Devanagari",
+    Arial,
+    sans-serif;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     overflow:hidden;
-    background:linear-gradient(135deg,#000,#222,#444);
+
+    background:
+    linear-gradient(
+        120deg,
+        #ffe4e6,
+        #fce7f3,
+        #ede9fe,
+        #e0f2fe
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 10s ease infinite;
+
+    color:#4a1942;
 }
+
+
+/* BACKGROUND ANIMATION */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* FLOATING HEARTS & FLOWERS */
+
+.floating{
+
+    position:fixed;
+
+    top:-60px;
+
+    z-index:1;
+
+    pointer-events:none;
+
+    animation:
+    falling linear infinite;
+
+}
+
+@keyframes falling{
+
+    0%{
+
+        transform:
+        translateY(-60px)
+        rotate(0deg)
+        scale(.7);
+
+        opacity:0;
+
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+
+        transform:
+        translateY(50vh)
+        rotate(180deg)
+        scale(1);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg)
+        scale(.7);
+
+        opacity:0;
+
+    }
+
+}
+
+
+.f1{
+    left:5%;
+    font-size:28px;
+    animation-duration:8s;
+}
+
+.f2{
+    left:17%;
+    font-size:22px;
+    animation-duration:10s;
+    animation-delay:2s;
+}
+
+.f3{
+    left:30%;
+    font-size:32px;
+    animation-duration:7s;
+    animation-delay:1s;
+}
+
+.f4{
+    left:45%;
+    font-size:24px;
+    animation-duration:9s;
+    animation-delay:3s;
+}
+
+.f5{
+    left:60%;
+    font-size:30px;
+    animation-duration:8s;
+    animation-delay:1s;
+}
+
+.f6{
+    left:76%;
+    font-size:25px;
+    animation-duration:11s;
+    animation-delay:2s;
+}
+
+.f7{
+    left:90%;
+    font-size:32px;
+    animation-duration:7s;
+    animation-delay:4s;
+}
+
+
+/* MAIN CARD */
 
 .card{
-    width:500px;
-    padding:50px;
+
+    position:relative;
+
+    z-index:5;
+
+    width:90%;
+
+    max-width:650px;
+
+    max-height:92vh;
+
+    overflow-y:auto;
+
+    padding:42px 28px;
+
     text-align:center;
-    color:white;
-    background:rgba(15,15,15,.9);
-    border-radius:30px;
-    box-shadow:0 0 180px rgba(255,215,0,.4);
+
+    background:
+    rgba(255,255,255,.91);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:32px;
+
+    border:2px solid #f9a8d4;
+
+    box-shadow:
+    0 20px 70px
+    rgba(100,50,100,.25);
+
+    animation:
+    cardIn 1.2s ease,
+    glow 3s ease-in-out infinite;
+
 }
+
+
+@keyframes cardIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(80px)
+        scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+
+@keyframes glow{
+
+    0%,100%{
+
+        box-shadow:
+        0 20px 60px
+        rgba(236,72,153,.20);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 20px 80px
+        rgba(139,92,246,.35);
+
+    }
+
+}
+
+
+/* TOP EMOJI */
+
+.top{
+
+    font-size:52px;
+
+    animation:
+    floating 3s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+
+/* HEADING */
 
 h1{
-    color:#FFD700;
-    margin-bottom:15px;
+
+    margin-top:10px;
+
+    font-size:37px;
+
+    color:#be185d;
+
+    text-shadow:
+    0 0 12px #fbcfe8;
+
+    animation:
+    titleGlow 2s ease-in-out infinite;
+
 }
 
-h2{
-    margin-bottom:20px;
+
+@keyframes titleGlow{
+
+    0%,100%{
+        text-shadow:
+        0 0 8px #fbcfe8;
+    }
+
+    50%{
+        text-shadow:
+        0 0 22px #f9a8d4;
+    }
+
 }
 
-#message{
-    color:#eee;
-    font-size:16px;
-    line-height:1.8;
-    min-height:160px;
-    white-space:pre-line;
+
+.teacher{
+
+    margin-top:8px;
+
+    color:#7c3aed;
+
+    font-size:20px;
+
 }
+
+
+.line{
+
+    width:120px;
+
+    height:4px;
+
+    margin:20px auto;
+
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+        to right,
+        #ec4899,
+        #8b5cf6
+    );
+
+    animation:
+    lineMove 2s ease-in-out infinite;
+
+}
+
+
+@keyframes lineMove{
+
+    0%,100%{
+        width:90px;
+    }
+
+    50%{
+        width:160px;
+    }
+
+}
+
+
+/* INTRO */
+
+.intro{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#5b3558;
+
+}
+
+
+/* BUTTON */
 
 button{
-    margin-top:20px;
-    padding:12px 30px;
+
+    margin-top:25px;
+
     border:none;
-    border-radius:30px;
-    background:#FFD700;
-    color:#000;
+
+    padding:16px 30px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-size:18px;
+
     font-weight:bold;
+
     cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ec4899,
+        #8b5cf6
+    );
+
+    box-shadow:
+    0 8px 25px
+    rgba(139,92,246,.35);
+
+    animation:
+    buttonPulse 2s infinite;
+
+    transition:.3s;
+
 }
+
+
+@keyframes buttonPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+}
+
 
 button:hover{
-    transform:scale(1.1);
+
+    transform:
+    scale(1.12);
+
 }
 
-.heart{
-    position:absolute;
-    animation:float 6s linear infinite;
+
+/* SURPRISE */
+
+#surprise{
+
+    display:none;
+
+    margin-top:25px;
+
+    animation:
+    reveal 1.2s ease;
+
 }
 
-@keyframes float{
+
+@keyframes reveal{
+
     from{
-        transform:translateY(100vh);
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(.9);
+
     }
+
     to{
-        transform:translateY(-100vh);
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
     }
+
 }
+
+
+/* MESSAGE */
+
+.message{
+
+    padding:22px;
+
+    text-align:left;
+
+    border-radius:18px;
+
+    border-left:
+    5px solid #ec4899;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff1f2,
+        #fdf4ff
+    );
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+/* NOTEBOOK */
+
+.notebook{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    border:
+    2px dashed #f59e0b;
+
+    background:#fff7ed;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+.notebook h2{
+
+    color:#d97706;
+
+    margin-bottom:8px;
+
+}
+
+
+.tick{
+
+    color:#16a34a;
+
+    font-weight:bold;
+
+}
+
+
+/* SIGNATURE */
+
+.signature{
+
+    margin-top:20px;
+
+    color:#7c3aed;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+
+.footer{
+
+    margin-top:18px;
+
+    color:#9d4edd;
+
+    font-size:14px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    .card{
+
+        padding:30px 18px;
+
+    }
+
+    h1{
+
+        font-size:29px;
+
+    }
+
+    .intro{
+
+        font-size:17px;
+
+    }
+
+    .message,
+    .notebook{
+
+        font-size:16px;
+
+    }
+
+}
+
 </style>
 
 </head>
 
+
 <body>
+
+
+<!-- FLOATING ELEMENTS -->
+
+<div class="floating f1">🌸</div>
+<div class="floating f2">❤️</div>
+<div class="floating f3">🌷</div>
+<div class="floating f4">💖</div>
+<div class="floating f5">🌺</div>
+<div class="floating f6">💕</div>
+<div class="floating f7">🌸</div>
+
+
+<!-- MAIN CARD -->
 
 <div class="card">
 
-<h1>🌸Dear Mithilesh Ma'am ❤️ 🌸</h1>
 
-<p id="message"></p>
+<div class="top">
+🌸📖🌸
+</div>
 
-<button onclick="openGift()">🎁 Open Gift</button>
+
+<h1>
+कुसुमलता मैम ❤️
+</h1>
+
+
+<p class="teacher">
+हमारी प्यारी हिंदी शिक्षिका 🌷
+</p>
+
+
+<div class="line"></div>
+
+
+<p class="intro">
+
+<b>प्रिय मैम,</b>
+
+<br><br>
+
+हिंदी सिर्फ एक विषय नहीं,
+बल्कि भावनाओं को शब्द देने वाली
+एक खूबसूरत भाषा है।
+
+<br>
+
+और हमें यह भाषा इतने प्यार से
+सिखाने के लिए आपका
+<b>बहुत-बहुत धन्यवाद।</b> ❤️
+
+</p>
+
+
+<button onclick="openGift()">
+
+🎁 मैम के लिए एक छोटा सा सरप्राइज
+
+</button>
+
+
+<!-- HIDDEN MESSAGE -->
+
+<div id="surprise">
+
+
+<div class="message">
+
+<b>🌸 Dear Kusumlata Ma'am 🌸</b>
+
+<br><br>
+
+आपने हमें सिर्फ हिंदी पढ़ना और लिखना
+नहीं सिखाया, बल्कि शब्दों में छिपी
+भावनाओं को समझना भी सिखाया है।
+
+<br><br>
+
+आपकी हर सीख और आपकी हर बात
+हमेशा याद रहेगी।
+
+<br><br>
+
+<b>
+एक अच्छे शिक्षक की सीख
+किताबों से कहीं ज्यादा बड़ी होती है। ❤️
+</b>
+
+</div>
+
+
+<!-- NOTEBOOK -->
+
+<div class="notebook">
+
+<h2>
+📚 मैम के लिए एक जरूरी सूचना 😄
+</h2>
+
+
+<p>
+
+<b>Dear Mayank</b> की notebook को लेकर
+मैम बिल्कुल tension मत लेना। 😂
+
+<br><br>
+
+<span class="tick">
+✔ Homework Complete
+</span>
+
+<br>
+
+<span class="tick">
+✔ Notebook Complete
+</span>
+
+<br>
+
+<span class="tick">
+✔ तैयारी लगभग पूरी 😎
+</span>
+
+<br><br>
+
+<b>
+बस मैम थोड़ा सा भरोसा रखिए...
+Notebook खाली नहीं मिलेगी! 😂📖❤️
+</b>
+
+</p>
+
+</div>
+
+
+<div class="signature">
+
+🌸 धन्यवाद मैम 🌸
+
+<br>
+
+— Dear Mayank की ओर से ❤️
+
+</div>
+
+
+<div class="footer">
+
+Made with ❤️, respect & a little Hindi ✨
+
+</div>
+
+
+</div>
+
 
 </div>
 
 
 <script>
 
-const text=`Thank you for your unwavering guidance,
-wisdom, and encouragement.
-
-Your dedication inspires me to learn,
-grow, and achieve my goals.
-
-Wishing you happiness,
-good health, and endless success.
-
-With Respect,
-Your Student`;
-
-let index=0;
 
 function openGift(){
 
-    document.querySelector("button").style.display="none";
 
-    let box=document.getElementById("message");
+/* SHOW MESSAGE */
 
-    function typing(){
+document.getElementById(
+"surprise"
+).style.display="block";
 
-        if(index < text.length){
 
-            box.innerHTML += text.charAt(index);
+/* CHANGE BUTTON */
 
-            index++;
+document.querySelector(
+"button"
+).innerHTML=
+"💝 मैम के लिए ढेर सारा सम्मान";
 
-            setTimeout(typing,50);
 
-        }
+/* CREATE HEARTS + FLOWERS */
 
-    }
+for(
+let i=0;
+i<45;
+i++
+){
 
-    typing();
+
+let item=
+document.createElement("div");
+
+
+let emojis=[
+"❤️",
+"💖",
+"💕",
+"🌸",
+"🌷",
+"🌺",
+"✨"
+];
+
+
+item.innerHTML=
+emojis[
+Math.floor(
+Math.random()*emojis.length
+)
+];
+
+
+item.style.position="fixed";
+
+item.style.left=
+Math.random()*100+"vw";
+
+item.style.top="-40px";
+
+item.style.fontSize=
+(15+
+Math.random()*25)+"px";
+
+item.style.zIndex="20";
+
+item.style.transition=
+"transform 5s linear, opacity 5s";
+
+
+document.body.appendChild(item);
+
+
+/* FALL */
+
+setTimeout(()=>{
+
+item.style.transform=
+"translateY(110vh) rotate(720deg)";
+
+item.style.opacity="0";
+
+},100);
+
+
+/* REMOVE */
+
+setTimeout(()=>{
+
+item.remove();
+
+},5500);
+
+
 }
 
-
-function createHeart(){
-
-let h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML=["❤️","🌸","✨","💖"][Math.floor(Math.random()*4)];
-
-h.style.left=Math.random()*100+"vw";
-
-h.style.fontSize=(20+Math.random()*20)+"px";
-
-document.body.appendChild(h);
-
-setTimeout(()=>h.remove(),6000);
-
 }
-
-setInterval(createHeart,300);
 
 </script>
 
+
 </body>
+
 </html>
