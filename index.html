@@ -1,1315 +1,509 @@
 <!DOCTYPE html>
+
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kusumlata Ma'am | Special Gift</title>
+<title>Kusumlata Ma'am 🌸</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Noto Sans Devanagari","Mangal","Segoe UI",sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
 
 body{
-    background:#080512;
-    color:white;
-    overflow-x:hidden;
-}
-
-
-/* =========================
-   BACKGROUND GLOW
-========================= */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#b85cff;
-    filter:blur(180px);
-    opacity:.18;
-    top:-150px;
-    left:-150px;
-    z-index:-2;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:450px;
-    height:450px;
-    background:#ff7ac8;
-    filter:blur(180px);
-    opacity:.12;
-    right:-150px;
-    bottom:-150px;
-    z-index:-2;
-}
-
-
-/* =========================
-   🌸❤️ FLOWING FLOWERS
-========================= */
-
-.floating{
-    position:fixed;
-    top:-70px;
-    z-index:9999;
-    pointer-events:none;
-    user-select:none;
-    animation:fall linear forwards;
-}
-
-@keyframes fall{
-
-    0%{
-        transform:
-        translateY(-80px)
-        translateX(0)
-        rotate(0deg)
-        scale(.7);
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    30%{
-        transform:
-        translateY(30vh)
-        translateX(45px)
-        rotate(100deg)
-        scale(1);
-    }
-
-    55%{
-        transform:
-        translateY(55vh)
-        translateX(-35px)
-        rotate(200deg)
-        scale(1.1);
-    }
-
-    80%{
-        transform:
-        translateY(80vh)
-        translateX(50px)
-        rotate(290deg)
-        scale(.9);
-    }
-
-    100%{
-        transform:
-        translateY(110vh)
-        translateX(-60px)
-        rotate(360deg)
-        scale(.7);
-        opacity:0;
-    }
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-.gift-section{
-
-    min-height:100vh;
-
-    padding:80px 20px;
-
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#d9c7ff,#c8f7ff);
+}
 
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-50px;
+    z-index:1;
+    font-size:24px;
+    animation:float 8s linear infinite;
+    opacity:0;
+    pointer-events:none;
+}
+
+.h1{left:5%;animation-delay:0s}
+.h2{left:20%;animation-delay:2s}
+.h3{left:45%;animation-delay:4s}
+.h4{left:70%;animation-delay:1s}
+.h5{left:90%;animation-delay:3s}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) scale(.5) rotate(0);
+        opacity:0;
+    }
+    20%{opacity:1}
+    100%{
+        transform:translateY(-115vh) scale(1.4) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Main card */
+.card{
+    position:relative;
+    z-index:5;
+    width:min(92%,550px);
+    padding:32px 25px;
     text-align:center;
+    border-radius:30px;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(15px);
+    border:2px solid white;
+    box-shadow:0 25px 60px rgba(80,40,100,.28);
+    animation:cardIn 1.2s ease;
 }
 
-
-/* =========================
-   HEADING
-========================= */
-
-.gift-heading span{
-
-    color:#d19aff;
-
-    font-size:13px;
-
-    letter-spacing:4px;
-
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:scale(.7) translateY(80px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
 }
 
-.gift-heading h1{
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-5px;
+    z-index:-1;
+    border-radius:35px;
+    background:linear-gradient(45deg,#ff65a3,#a86cff,#62e8ff,#ff65a3);
+    filter:blur(15px);
+    opacity:.55;
+    animation:glow 4s linear infinite;
+}
 
-    font-size:
-    clamp(38px,7vw,75px);
+@keyframes glow{
+    50%{filter:blur(25px)}
+}
 
-    margin:18px 0;
+/* Teacher */
+.teacher{
+    font-size:62px;
+    animation:bounce 2s infinite;
+}
 
-    background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #e1a8ff,
-        #ff91d5
-    );
+@keyframes bounce{
+    50%{transform:translateY(-10px)}
+}
 
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-    animation:titleGlow 3s infinite alternate;
-
+/* Heading */
+h1{
+    margin-top:8px;
+    color:#8e3568;
+    font-size:clamp(30px,7vw,46px);
+    animation:titleGlow 2s infinite;
 }
 
 @keyframes titleGlow{
-
-    from{
-        filter:
-        drop-shadow(
-            0 0 5px
-            rgba(190,90,255,.2)
-        );
-    }
-
-    to{
-        filter:
-        drop-shadow(
-            0 0 25px
-            rgba(255,120,220,.6)
-        );
-    }
-}
-
-.gift-heading p{
-
-    color:#aaa2bd;
-
-    font-size:16px;
-
-}
-
-
-/* =========================
-   ⬇️ BIG ARROW
-========================= */
-
-.gift-arrow{
-
-    font-size:85px;
-
-    font-weight:900;
-
-    color:#ffd86b;
-
-    margin-top:45px;
-
-    margin-bottom:-5px;
-
-    line-height:.8;
-
-    text-shadow:
-        0 0 10px #ffd86b,
-        0 0 30px rgba(255,216,107,.8),
-        0 0 60px rgba(255,216,107,.5);
-
-    animation:
-        bigArrow 1s ease-in-out infinite;
-}
-
-@keyframes bigArrow{
-
-    0%,100%{
-        transform:
-        translateY(0)
-        scale(1);
-
-        opacity:.8;
-    }
-
     50%{
-        transform:
-        translateY(18px)
-        scale(1.12);
-
-        opacity:1;
+        text-shadow:0 0 18px rgba(255,70,150,.5);
     }
-
 }
 
+.subtitle{
+    margin-top:7px;
+    color:#555;
+    font-size:15px;
+}
 
-/* =========================
-   🎁 GIFT
-========================= */
+/* Hindi notebook */
+.notebook{
+    margin:22px auto;
+    width:94%;
+    padding:20px 16px;
+    text-align:left;
+    background:#fffef5;
+    border-left:7px solid #ff729f;
+    border-radius:18px;
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
+    transform:rotate(-1deg);
+    animation:notebookMove 3s ease-in-out infinite;
+}
 
-.gift-wrapper{
+@keyframes notebookMove{
+    50%{transform:rotate(1deg)}
+}
 
-    margin-top:0;
+.notebook p{
+    margin:8px 0;
+    color:#444;
+    line-height:1.8;
+    font-size:15px;
+}
 
-    width:240px;
+.highlight{
+    color:#e94076;
+    font-weight:bold;
+}
 
-    height:280px;
+.warning{
+    padding:12px;
+    margin-top:12px;
+    text-align:center;
+    border-radius:15px;
+    background:linear-gradient(135deg,#fff0f5,#fff8df);
+    border:1px dashed #ff83a9;
+    animation:pulse 2s infinite;
+}
 
+@keyframes pulse{
+    50%{transform:scale(1.02)}
+}
+
+/* Button */
+button{
+    margin-top:18px;
+    border:0;
+    padding:14px 25px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#ff5f9e,#a86cff);
+    color:white;
+    font-size:15px;
+    font-weight:bold;
     cursor:pointer;
-
-    position:relative;
-
+    box-shadow:0 8px 20px rgba(180,70,150,.3);
+    transition:.3s;
 }
 
-.gift{
-
-    position:relative;
-
-    width:170px;
-
-    height:150px;
-
-    margin:auto;
-
-    top:30px;
-
-    animation:
-    giftFloat 2.5s ease-in-out infinite;
-
+button:hover{
+    transform:scale(1.07);
 }
 
-@keyframes giftFloat{
+/* Big heart */
+.big-heart{
+    display:block;
+    font-size:42px;
+    margin-top:8px;
+    animation:heartbeat 1.2s infinite;
+}
 
+@keyframes heartbeat{
+    25%{transform:scale(1.25)}
+    40%{transform:scale(1)}
+    60%{transform:scale(1.15)}
+}
+
+/* Sparkles */
+.sparkle{
+    position:absolute;
+    font-size:20px;
+    animation:sparkle 2s infinite;
+}
+
+.s1{top:8%;left:9%}
+.s2{top:12%;right:10%;animation-delay:.5s}
+.s3{bottom:10%;left:12%;animation-delay:1s}
+.s4{bottom:12%;right:12%;animation-delay:1.5s}
+
+@keyframes sparkle{
     0%,100%{
-        transform:
-        translateY(0);
+        opacity:0;
+        transform:scale(.5) rotate(0);
     }
-
     50%{
-        transform:
-        translateY(-16px);
-    }
-
-}
-
-
-/* =========================
-   GIFT BOX
-========================= */
-
-.gift-box{
-
-    position:absolute;
-
-    width:170px;
-
-    height:120px;
-
-    bottom:0;
-
-    background:
-    linear-gradient(
-        135deg,
-        #9b51e8,
-        #54228e
-    );
-
-    border-radius:9px;
-
-    box-shadow:
-
-    0 30px 60px
-    rgba(0,0,0,.5),
-
-    inset 0 0 30px
-    rgba(255,255,255,.08);
-
-}
-
-
-/* =========================
-   RIBBON
-========================= */
-
-.vertical-ribbon{
-
-    position:absolute;
-
-    width:25px;
-
-    height:120px;
-
-    left:72px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #ffd86b,
-        #fff4b0,
-        #ffd86b
-    );
-
-}
-
-.horizontal-ribbon{
-
-    position:absolute;
-
-    width:170px;
-
-    height:22px;
-
-    top:45px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #ffd86b,
-        #fff4b0,
-        #ffd86b
-    );
-
-}
-
-
-/* =========================
-   GIFT LID
-========================= */
-
-.gift-lid{
-
-    position:absolute;
-
-    width:185px;
-
-    height:38px;
-
-    left:-7px;
-
-    top:10px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #b56aff,
-        #7138b2
-    );
-
-    border-radius:9px;
-
-    z-index:5;
-
-    transition:
-    1s cubic-bezier(.2,.8,.2,1);
-
-    box-shadow:
-    0 12px 28px
-    rgba(0,0,0,.4);
-
-}
-
-
-/* =========================
-   BOW
-========================= */
-
-.bow{
-
-    position:absolute;
-
-    width:60px;
-
-    height:38px;
-
-    border:
-    8px solid #ffd86b;
-
-    border-radius:50%;
-
-    top:-20px;
-
-}
-
-.bow.left{
-
-    left:45px;
-
-    transform:
-    rotate(25deg);
-
-}
-
-.bow.right{
-
-    left:78px;
-
-    transform:
-    rotate(-25deg);
-
-}
-
-
-/* =========================
-   OPEN GIFT
-========================= */
-
-.gift-wrapper.open .gift{
-
-    animation:none;
-
-    transform:
-    translateY(10px);
-
-}
-
-.gift-wrapper.open .gift-lid{
-
-    transform:
-    translateY(-85px)
-    rotate(-8deg);
-
-}
-
-
-/* =========================
-   CLICK TEXT
-========================= */
-
-.click-text{
-
-    margin-top:55px;
-
-    color:#d29aff;
-
-    font-size:14px;
-
-    animation:
-    clickPulse 1.5s infinite;
-
-}
-
-@keyframes clickPulse{
-
-    0%,100%{
-
-        opacity:.5;
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
         opacity:1;
-
-        transform:scale(1.08);
-
+        transform:scale(1.4) rotate(180deg);
     }
-
 }
 
 
-/* =================================================
-   💌 HINDI CARD
-================================================= */
+/* =========================
+   SECOND CARD
+========================= */
 
-.new-card{
+.second-card{
+    position:fixed;
+    z-index:20;
+    width:min(90%,500px);
+    padding:35px 25px;
+    text-align:center;
+    border-radius:30px;
 
-    position:relative;
+    background:rgba(255,255,255,.94);
+    box-shadow:0 25px 80px rgba(60,20,80,.35);
 
-    width:min(92%,750px);
-
-    margin-top:70px;
-
-    padding:60px 50px;
-
-    border-radius:35px;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.13),
-        rgba(255,255,255,.035)
-    );
-
-    border:
-    1px solid
-    rgba(255,255,255,.17);
-
-    backdrop-filter:
-    blur(25px);
-
-    box-shadow:
-    0 35px 100px
-    rgba(0,0,0,.5);
-
-    overflow:hidden;
-
+    transform:scale(0) rotate(-8deg);
     opacity:0;
-
-    transform:
-    translateY(180px)
-    scale(.6)
-    rotateX(20deg);
-
     pointer-events:none;
 
     transition:
-    1.3s cubic-bezier(.17,.84,.44,1);
-
+        transform .8s cubic-bezier(.17,.67,.35,1.4),
+        opacity .5s;
 }
 
-.new-card.show{
-
+.second-card.show{
+    transform:scale(1) rotate(0);
     opacity:1;
-
-    transform:
-    translateY(0)
-    scale(1)
-    rotateX(0);
-
     pointer-events:auto;
-
 }
 
-
-/* =========================
-   CARD GLOW
-========================= */
-
-.card-glow{
-
-    position:absolute;
-
-    width:300px;
-
-    height:300px;
-
-    background:#c05cff;
-
-    filter:blur(130px);
-
-    opacity:.2;
-
-    top:-150px;
-
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-    animation:
-    glowMove 4s infinite alternate;
-
+.second-card h2{
+    color:#8e3568;
+    font-size:30px;
+    margin-bottom:15px;
 }
 
-@keyframes glowMove{
-
-    from{
-
-        transform:
-        translateX(-50%)
-        scale(.8);
-
-    }
-
-    to{
-
-        transform:
-        translateX(-50%)
-        scale(1.3);
-
-    }
-
-}
-
-
-/* =========================
-   CARD CONTENT
-========================= */
-
-.card-content{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-.card-top span{
-
-    font-size:12px;
-
-    letter-spacing:4px;
-
-    color:#d19aff;
-
-}
-
-
-/* =========================
-   FLOWER
-========================= */
-
-.flower{
-
+.second-card .emoji{
     font-size:65px;
-
-    margin:25px 0 10px;
-
-    animation:
-    flowerFloat 2s
-    infinite ease-in-out;
-
+    animation:bounce 1.5s infinite;
 }
 
-@keyframes flowerFloat{
-
-    0%,100%{
-
-        transform:
-        translateY(0)
-        rotate(0);
-
-    }
-
-    50%{
-
-        transform:
-        translateY(-8px)
-        rotate(3deg);
-
-    }
-
-}
-
-
-/* =========================
-   CARD TITLE
-========================= */
-
-.card-content h2{
-
-    font-size:
-    clamp(30px,5vw,48px);
-
-    margin-bottom:20px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #e1a8ff,
-        #ff9bd9
-    );
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-}
-
-
-/* =========================
-   LINE
-========================= */
-
-.line{
-
-    width:80px;
-
-    height:2px;
-
-    margin:
-    0 auto 30px;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        #d17cff,
-        transparent
-    );
-
-}
-
-
-/* =========================
-   MESSAGE
-========================= */
-
-.main-message{
-
-    font-size:19px !important;
-
-    color:#e4ddec !important;
-
-    line-height:2 !important;
-
-}
-
-.card-content p{
-
-    color:#aaa2b8;
-
+.second-card p{
+    color:#444;
     line-height:1.9;
-
-    margin:18px auto;
-
-    max-width:620px;
-
+    font-size:16px;
 }
 
-
-/* =========================
-   QUOTE
-========================= */
-
-.hindi-quote{
-
-    margin:
-    30px auto;
-
-    padding:20px;
-
-    border-left:
-    3px solid #c77aff;
-
-    border-right:
-    3px solid #c77aff;
-
-    color:#e8b9ff !important;
-
-    font-size:18px;
-
+.close-btn{
+    background:linear-gradient(135deg,#ff719f,#9b6cff);
 }
 
-
-/* =========================
-   SIGNATURE
-========================= */
-
-.signature{
-
-    margin-top:35px;
-
-    font-size:18px;
-
-    color:#d6cedf;
-
+/* Confetti */
+.confetti{
+    position:fixed;
+    top:-20px;
+    z-index:50;
+    pointer-events:none;
+    animation:confettiFall 3s linear forwards;
 }
 
-.signature strong{
-
-    display:block;
-
-    font-size:28px;
-
-    margin-top:10px;
-
-    animation:
-    heartBeat 1.2s infinite;
-
+@keyframes confettiFall{
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+        opacity:0;
+    }
 }
 
-@keyframes heartBeat{
-
-    0%,100%{
-        transform:scale(1);
+@media(max-width:500px){
+    .card{
+        padding:27px 17px;
     }
 
-    50%{
-        transform:scale(1.25);
+    .teacher{
+        font-size:52px;
     }
 
-}
-
-
-/* =========================
-   CARD BOTTOM
-========================= */
-
-.card-bottom{
-
-    margin-top:35px;
-
-    padding-top:20px;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,.08);
-
-    font-size:12px;
-
-    color:#777083;
-
-}
-
-
-/* =========================
-   FINAL MESSAGE
-========================= */
-
-.final{
-
-    text-align:center;
-
-    padding:80px 20px 120px;
-
-}
-
-.final h2{
-
-    font-size:
-    clamp(35px,7vw,70px);
-
-    background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #d27aff,
-        #ff8dcc
-    );
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-}
-
-.final p{
-
-    color:#aaa2b8;
-
-    margin-top:20px;
-
-    font-size:17px;
-
-}
-
-.heart{
-
-    display:inline-block;
-
-    animation:
-    beat 1s infinite;
-
-}
-
-@keyframes beat{
-
-    0%,100%{
-        transform:scale(1);
+    .notebook p{
+        font-size:14px;
     }
 
-    50%{
-        transform:scale(1.25);
+    .second-card{
+        padding:30px 20px;
     }
-
 }
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-
-    text-align:center;
-
-    padding:25px;
-
-    color:#686172;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,.06);
-
-    font-size:13px;
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:600px){
-
-    .gift-section{
-        padding:70px 15px;
-    }
-
-    .gift-arrow{
-        font-size:70px;
-    }
-
-    .new-card{
-        padding:45px 25px;
-    }
-
-    .main-message{
-        font-size:16px !important;
-    }
-
-    .hindi-quote{
-        font-size:16px;
-    }
-
-}
-
 </style>
 
 </head>
 
-
 <body>
 
+<!-- Floating hearts -->
 
-<section class="gift-section">
+<div class="heart h1">💖</div>
+<div class="heart h2">💕</div>
+<div class="heart h3">💗</div>
+<div class="heart h4">💓</div>
+<div class="heart h5">💞</div>
 
+<!-- MAIN CARD -->
 
-    <!-- HEADING -->
+<div class="card">
 
-    <div class="gift-heading">
+```
+<div class="sparkle s1">✨</div>
+<div class="sparkle s2">⭐</div>
+<div class="sparkle s3">✨</div>
+<div class="sparkle s4">🌟</div>
 
-        <span>
-            ✦ आपके लिए एक विशेष उपहार ✦
-        </span>
+<div class="teacher">👩‍🏫</div>
 
-        <h1>
-            प्रिय Kusumlata Ma'am 🌸
-        </h1>
+<h1>Kusumlata Ma'am 🌸</h1>
 
-        <p>
-            आपके लिए एक छोटा सा डिजिटल सरप्राइज़ ❤️
-        </p>
+<div class="subtitle">
+    हमारी प्यारी हिन्दी शिक्षिका के लिए ❤️
+</div>
 
-    </div>
 
-
-    <!-- BIG ARROW -->
-
-    <div class="gift-arrow">
-        ↓
-    </div>
-
-
-    <!-- GIFT -->
-
-    <div
-        class="gift-wrapper"
-        id="giftWrapper"
-        onclick="openGift()"
-    >
-
-        <div class="gift">
-
-            <div class="gift-lid">
-
-                <div class="bow left"></div>
-
-                <div class="bow right"></div>
-
-            </div>
-
-
-            <div class="gift-box">
-
-                <div class="vertical-ribbon"></div>
-
-                <div class="horizontal-ribbon"></div>
-
-            </div>
-
-        </div>
-
-
-        <div class="click-text">
-
-            ✨ उपहार खोलने के लिए क्लिक करें ✨
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         CARD
-    ========================= -->
-
-    <div
-        class="new-card"
-        id="newCard"
-    >
-
-        <div class="card-glow"></div>
-
-
-        <div class="card-content">
-
-
-            <div class="card-top">
-
-                <span>
-                    ✦ दिल से धन्यवाद ✦
-                </span>
-
-            </div>
-
-
-            <div class="flower">
-                🌸
-            </div>
-
-
-            <h2>
-                प्रिय Kusumlata Ma'am
-            </h2>
-
-
-            <div class="line"></div>
-
-
-            <p class="main-message">
-
-                हिंदी केवल एक विषय नहीं,
-                बल्कि हमारी भावनाओं,
-                विचारों और संस्कारों को व्यक्त करने का
-                एक सुंदर माध्यम है।
-
-            </p>
-
-
-            <p>
-
-                आपने हिंदी को सिर्फ पढ़ाया नहीं,
-                बल्कि उसे समझना और महसूस करना भी सिखाया।
-                आपकी मेहनत, मार्गदर्शन और प्रोत्साहन
-                हमारे लिए हमेशा यादगार रहेगा।
-
-            </p>
-
-
-            <div class="hindi-quote">
-
-                "एक अच्छा शिक्षक जीवनभर के लिए
-                सीखने की प्रेरणा दे जाता है।"
-
-            </div>
-
-
-            <div class="signature">
-
-                सादर एवं हृदय से धन्यवाद
-
-                <strong>
-                    ❤️
-                </strong>
-
-            </div>
-
-
-            <div class="card-bottom">
-
-                विशेष रूप से
-                <b>Kusumlata Ma'am</b>
-                के लिए 🌷
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- FINAL -->
-
-<section class="final">
-
-    <h2>
-        धन्यवाद Kusumlata Ma'am ❤️
-    </h2>
+<div class="notebook">
 
     <p>
-        आपकी शिक्षा • आपका मार्गदर्शन • आपकी प्रेरणा
+        📖 <span class="highlight">प्रिय मैम,</span>
     </p>
-
-    <br>
 
     <p>
-        आपके लिए हमेशा
-        <span class="heart">❤️</span>
-        सम्मान
+        एक छोटी-सी बात बतानी थी... 😅
     </p>
 
-</section>
+    <p>
+        मेरा काम अभी
+        <span class="highlight">पूरा नहीं हो पाया</span> 🙈
+    </p>
+
+    <div class="warning">
+
+        😭🙏 <b>मैम, कल पनिशमेंट मत देना प्लीज़!</b>
+
+        <br><br>
+
+        🤞 वादा है, काम पूरा करके ज़रूर दिखाऊँगा।
+
+    </div>
+
+    <p style="text-align:center">
+
+        बस कल एक बार
+        <span class="highlight">माफ़ कर देना</span>
+        और एक प्यारी-सी मुस्कान दे देना। 😊🌸
+
+    </p>
+
+</div>
 
 
-<footer>
+<div class="big-heart">❤️</div>
 
-    © 2026 | Kusumlata Ma'am के लिए एक छोटा सा उपहार 🌸
+<button onclick="openCard()">
+    मैम, एक बार यहाँ क्लिक करें 😊✨
+</button>
+```
 
-</footer>
+</div>
 
+<!-- SECOND CARD -->
 
+<div class="second-card" id="secondCard">
+
+```
+<div class="emoji">🌸👩‍🏫🌸</div>
+
+<h2>एक आख़िरी बात... 💖</h2>
+
+<p>
+
+    <b>कुसुमलता मैम,</b> 🌷
+
+    <br><br>
+
+    आप हमारी हिन्दी की सिर्फ़
+    <b>शिक्षिका</b> ही नहीं,
+    बल्कि हमें हमेशा सही रास्ता दिखाने वाली
+    एक बहुत अच्छी टीचर हैं। ❤️
+
+    <br><br>
+
+    इसलिए आज की सबसे बड़ी request है...
+
+    <br><br>
+
+    <span class="highlight">
+        "मैम, प्लीज़ गुस्सा मत होना...
+        और एक बार मुस्कुरा देना!" 😄🌸
+    </span>
+
+    <br><br>
+
+    🙏 काम थोड़ा late है,
+    लेकिन respect हमेशा <b>100%</b> है। ❤️
+
+</p>
+
+<div class="big-heart">💖</div>
+
+<button class="close-btn" onclick="closeCard()">
+    वापस जाएँ 🌷
+</button>
+```
+
+</div>
 
 <script>
 
-/* =========================
-   🎁 OPEN GIFT
-========================= */
+/* Open second card */
+function openCard(){
 
-function openGift(){
+    document
+        .getElementById("secondCard")
+        .classList.add("show");
 
-    const wrapper =
-        document.getElementById("giftWrapper");
-
-    const card =
-        document.getElementById("newCard");
+    createConfetti();
+}
 
 
-    if(
-        wrapper.classList.contains("open")
-    ){
-        return;
+/* Close second card */
+function closeCard(){
+
+    document
+        .getElementById("secondCard")
+        .classList.remove("show");
+}
+
+
+/* Confetti effect */
+function createConfetti(){
+
+    const emojis = [
+        "🌸",
+        "💖",
+        "✨",
+        "🌷",
+        "⭐",
+        "💕",
+        "🎉"
+    ];
+
+    for(let i = 0; i < 35; i++){
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random()*emojis.length
+                )
+            ];
+
+        confetti.style.left =
+            Math.random()*100 + "vw";
+
+        confetti.style.fontSize =
+            (15 + Math.random()*18) + "px";
+
+        confetti.style.animationDuration =
+            (2 + Math.random()*2) + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },4000);
     }
-
-
-    wrapper.classList.add("open");
-
-
-    const text =
-        wrapper.querySelector(".click-text");
-
-
-    text.innerHTML =
-        "🌸 आपका विशेष संदेश 🌸";
-
-
-    setTimeout(function(){
-
-        card.classList.add("show");
-
-
-        setTimeout(function(){
-
-            card.scrollIntoView({
-
-                behavior:"smooth",
-
-                block:"center"
-
-            });
-
-        },250);
-
-    },650);
-
-}
-
-
-/* =========================
-   🌸❤️ CONTINUOUS FLOW
-========================= */
-
-const symbols = [
-
-    "🌸",
-    "🌷",
-    "🌺",
-    "🌹",
-    "🌼",
-    "❤️",
-    "💖",
-    "💕",
-    "💗",
-    "💓"
-
-];
-
-
-function createFloating(){
-
-    const element =
-        document.createElement("div");
-
-
-    element.className =
-        "floating";
-
-
-    element.innerHTML =
-        symbols[
-            Math.floor(
-                Math.random() *
-                symbols.length
-            )
-        ];
-
-
-    element.style.left =
-        Math.random() * 100 + "vw";
-
-
-    element.style.fontSize =
-        (15 + Math.random() * 22) + "px";
-
-
-    element.style.animationDuration =
-        (5 + Math.random() * 6) + "s";
-
-
-    element.style.filter =
-        "drop-shadow(0 0 5px rgba(255,255,255,.15))";
-
-
-    document.body.appendChild(element);
-
-
-    setTimeout(function(){
-
-        element.remove();
-
-    },12000);
-
-}
-
-
-/* CONTINUOUS FLOW */
-
-setInterval(
-    createFloating,
-    450
-);
-
-
-/* START FLOW */
-
-for(
-    let i = 0;
-    i < 15;
-    i++
-){
-
-    setTimeout(
-        createFloating,
-        i * 220
-    );
-
 }
 
 </script>
